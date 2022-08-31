@@ -1,8 +1,11 @@
+[[Me]]
+
 # To Do
 
 ## [[Programing]]
 - [ ] In [[Space Agency]] add scrolling animaitons
-- [ ] Make a spike around personal portfolio page
+- [ ] Make a spike page around personal portfolio page
+- [ ] Make a spike for [[Babysitter Page]]
 - ### To Learn
 	- [x] [[Zero Down Time Architecture]]
 	- [ ] Go through all of the [[Design Pattern]]
@@ -20,6 +23,6 @@
 			- [x] Gain access to the phone storage like Documents and Downloads
 			- [x] Clone the repo in the folder that is visible from the phone GUI
 		- [x] Install Obsidian on the phone
-- [ ] Add [[Trening]] file
-- [ ] Add a file for the page to group parents to pay a babysitter together
-- [ ] Add a spellchecker plugin if it exists
+- [x] Add [[Trening]] file
+- [x] Add a file for the page to group parents to pay a babysitter together
+- [x] Add a spellchecker plugin if it exists

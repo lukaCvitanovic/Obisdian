@@ -18,6 +18,9 @@
 	- [[DevOps]]
 	- [[Verzioning System]]
 
+## Exploration and Spikes
+- [[Babysitter Page]]
+
 ## Learned
 - Naming conventions
 	- [[Info And Error Codes Rework#Learned Programing Learned]]
