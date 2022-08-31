@@ -18,4 +18,3 @@
 		- When testing in envs where changes can't be made frequently make **as much of it customizable** and by things user can change on the fly
 			- Like pulling data from a **requests** to be used as config parameters for things and services
 - This task show the **importance of monitoring** the servers in regards to processed entries, timeout times and memory usage
-- 

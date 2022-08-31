@@ -10,6 +10,19 @@
 
 ---
 
+## Thrubleshooting SQS
+- Works with older set of creds
+	- Ones that start with AKIA
+- The creds from aws only work when sessionToken is pressent
+	- Ones that start with ASIA
+- The core problem is still unknow
+	- This issue should be happening, because how was the SQS accessed in the past
+		- This issue was not present on **staging or staging1** (env in which the invoice file migration was tested also using SQS)
+	- **Devops** was contacted to provide **support**
+- Possible solutions:
+	1) If env do have AWS credentials set as env variables and are available to **all** envs
+		- Session token is available in the envs and can be used in SQS config 
+
 ## Steps
 - [x] Implement [[SQS]] Pattern in [[Accounting Service]]
 	- [x] Implement queueJob method in CronJobsService
