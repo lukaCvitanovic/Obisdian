@@ -4,7 +4,9 @@
 
 ## Activities
 - [[Programing]]
-- [[Trening]]
+- [[Training]]
+- [[Workshop]]
+- 
 
 ## PAT
 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

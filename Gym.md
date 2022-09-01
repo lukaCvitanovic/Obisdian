@@ -1,9 +1,9 @@
-[[Trening]]
+[[Training]]
 
 # Gym
 
 ## Tags:
-#trening , #gym
+#training , #gym
 
 ## Links:
 

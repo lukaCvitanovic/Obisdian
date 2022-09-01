@@ -1,9 +1,9 @@
-[[Trening]]
+[[Training]]
 
 # Parkour
 
 ## Tags:
-#trening , #parkour
+#training , #parkour
 
 ## Links:
 

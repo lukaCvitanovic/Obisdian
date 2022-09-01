@@ -1,4 +1,4 @@
-[[Trening]]
+[[Training]]
 
 # Diet
 
