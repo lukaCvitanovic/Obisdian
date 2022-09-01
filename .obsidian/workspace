@@ -1,0 +1,127 @@
+{
+  "main": {
+    "id": "03157bc75dea42c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "3c82cd29be8bbe5b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Me.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2130eb0eec6a56bd",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "2d04505e22eee4d6",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {}
+        }
+      },
+      {
+        "id": "5e76d1c49857aa49",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "fc159b272b1bdbc5",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "ef91b204b5a9bd53",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "feab152b0a79ff06",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "812113a699fc003f",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Me.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "6ac8cb50699540df",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Me.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "8539540757d7540a",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Me.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "3c82cd29be8bbe5b",
+  "lastOpenFiles": [
+    "Babysitter Page.md",
+    "Programing.md",
+    "TO DO.md",
+    "Diet.md",
+    "Trening.md",
+    "Gym.md",
+    "Parkour.md",
+    "Me.md"
+  ]
+}
