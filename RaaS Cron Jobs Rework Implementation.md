@@ -73,6 +73,11 @@
 	- [x] Rework InfoCodes to make it easier to add new codes
 	- [x] Log when the all the requests are pushed into the queue
 	- [x] Log when the queue is empty
+- [ ] Optimization
+	- Goal is to reach at least **1000req/hour** throughput
+	- Try with Bottleneck limit to 2000
+	- Try with priority ON_DEMAND
+		- Throughput seams the same
 - [ ] Testing
 	- [x] For local testing find 10 client deposits and create a mock JSON to generate high volume mock payload
 	- [x] For the env test find 10 client deposits from GP3 or GP1 and create a mock JSON to generate high volume mock payload
@@ -85,7 +90,8 @@
 	- [ ] Call routes on work-uat env where the code was deployed to check if the changes had the desired effect
 		- [ ] Check lspBillUpdateStatus handler
 		- [x] Check clientDepositUpdate handler
-			- Testing with 1k entries -> ETA is 11 hours
+			- Testing with 1k entries -> ETA is 11 hours 
+			- Initial throughput with Bottleneck value of 900 is **1.83req/min** or **110req/hour**
 		- [ ] Check clientBillPaidStatus handler
 - [x] Changes to the crons
 	- [x] Separate the scheduale for unpaid and paid cron so they don't overlap
