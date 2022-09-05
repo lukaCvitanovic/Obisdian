@@ -29,5 +29,6 @@
 - [x] Add a spellchecker plugin if it exists
 - [x] Add a page for Table
 - [x] Add a Workshop page for all DIY and hands on work related stuff
-- [ ] Add [[Workshop]] learning
-- [ ] Add [[Ostava]] page
+- [x] Add Workshop learning
+- [x] Add Ostava page
+- [ ] Refactor [[Tortelini]] page to have timeline chart
