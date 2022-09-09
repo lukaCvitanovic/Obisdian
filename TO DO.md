@@ -7,6 +7,7 @@
 - [ ] Make a spike page around personal portfolio page
 - [ ] Make a spike for [[Babysitter Page]]
 - [ ] Fill in [[AWS]] page
+- [ ] Find Jest GUI plugin for VS code
 - ### To Learn
 	- [x] [[Zero Down Time Architecture]]
 	- [ ] Go through all of the [[Design Pattern]]

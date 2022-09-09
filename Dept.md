@@ -9,3 +9,6 @@ Organization that has multiple projects
 
 ### Bootcamp
 - [[Bootcamp 2022]]
+
+## Bootcamp Projects
+- [[Kairos]]

@@ -73,8 +73,40 @@
 	- [x] Rework InfoCodes to make it easier to add new codes
 	- [x] Log when the all the requests are pushed into the queue
 	- [x] Log when the queue is empty
-- [ ] Optimization
+- [x] Implement new pattern to the other crons
+	- To Do
+		- [x] Add gatewayId in the controller
+		- [x] Add priority in the context
+		- [x] Modify the mapper to forward ids
+		- [x] Make one schedule call where all the requests are called with Promise.allSetteled
+		- [x] use queueBulkJobStandalone
+		- [x] Call retryReceivingMessages at the end of the cron
+		- [x] Modify the unit tests
+	- Crons
+		- [x] lspBillUpdateStatus
+		- [x] clientBillPaidStatus
+		- [x] clientBillUnpaidStatus
+- [x] Implement temp pattern for processing live entries
+	- [x] Set the schedule
+	- [x] Add condition to stop the execution if start date is end date
+	- to do
+		- [x] Remove payload
+		- [x] Add initialRaasSize
+		- [x] Set the date range that progresses towards today
+		- [x] Use original report sertvice code
+		- [x] set initial size
+		- [x] change schedule parameters
+		- [x] chage queueBulkJobStandalone parameters
+		- [x] Increment cron start date
+		- [x] change retryReceivingMessages parameters
+		- [x] modify unit tests
+	- Crons
+		- [x] lspBillUpdateStatus
+		- [x] clientBillPaidStatus
+		- [x] clientBillUnpaidStatus
+- [x] Optimization
 	- Goal is to reach at least **1000req/hour** throughput
+		- Reached **4800req/hour**
 	- Try with Bottleneck limit to 2000
 	- Try with priority ON_DEMAND
 		- Throughput seams the same
@@ -91,8 +123,17 @@
 	- [x] Call routes on work-uat env where the code was deployed to check if the changes had the desired effect
 		- [ ] Check lspBillUpdateStatus handler
 		- [x] Check clientDepositUpdate handler
-			- Testing with 1k entries -> ETA is 11 hours 
-			- Initial throughput with Bottleneck value of 900 is **1.83req/min** or **110req/hour**
+			- Initial work-uat testing
+				- Testing with 1k entries -> ETA is 11 hours 
+				- Initial throughput with Bottleneck value of 900 is **1.83req/min** or **110req/hour**
+			- work-uat testing with correct Bottleneck pattern and disabled deduplication
+				- 100 entries
+					- Throughput is **80req/min** or **4800req/hour**
+				- 1k entries
+					- Throughput **79.42req/min**
+					- Finished in 12 min
+					- [x] 47 entries were not delivered
+						- Caused because entries payloads didn't have ids derived from the index but defaulted to the random value that was repeated 47 time and thus those entries were deduplicated
 		- [ ] Check clientBillPaidStatus handler
 - [x] Changes to the crons
 	- [x] Separate the scheduale for unpaid and paid cron so they don't overlap
@@ -102,7 +143,58 @@
 	- [x] Reenable client deposit cron
 		- Done for testing purposes
 	- [x] Understand the flow of the reworked cron on SQS
-- [ ] Getting ready for production
-	- [ ] Revert changes regarding high load payloads for crons
+- [x] Getting ready for production
+	- [x] Revert changes regarding high load payloads for crons
 		- This includes the unit tests
+
+## Post Relies Improvements
+- [ ] Make the crons log the current index of the entire instead of the number of the lest in queue
+	- [ ] Implement InfoCodes upgrade
+	- [ ] Make it so that on the entire number the cron name is visible in the logger context
+	- [x] Debounce was not working since it needed to be called
+		- Caused infinite loop of retries
+
+## [Executions](https://globalization-partners.atlassian.net/wiki/spaces/GPB/pages/2779644220/Report+as+a+Service+-+update+Billed+to+Paid+status)
+### lspBillUpdateStatus
+**Date Range** | **# Entries** | **Status**
+---------- | --------- | -------
+3.7. - 10.7. |     1    | Done
+10.7. - 17.7. |     74     | Done
+17.7. - 24.7. |     336     | 337/ Done, without last 4
+24.7. - 31.7.|      505     | Done
+31.7. - 7.8. |      263     |
+7.8. - 14.8. |      117      |
+14.8. - 21.8. |     200     | Done, without the last
+21.8. - 28.8. |     533     |
+28.8. - 4.9. |      584     |
+4.9. - 8.9. |       28     |
+
+
+### clientBillPaidStatus
+**Date Range** | **# Entries** | **Status**
+---------- | --------- | -------
+3.7. - 10.7. |     216     | Done
+10.7. - 17.7. |    106      | Done, without the last
+17.7. - 24.7. |    1317      | without the last 86
+24.7. - 31.7.|      9605     | Done
+31.7. - 7.8. |      2520     | Skiped
+7.8. - 14.8. |      2247      | Done
+14.8. - 21.8. |     3140     | 
+21.8. - 28.8. |     3975     |
+28.8. - 4.9. |      4685     |
+4.9. - 8.9. |      1257      |
+
+### clientBillUnpaidStatus
+**Date Range** | **# Entries** | **Status**
+---------- | --------- | -------
+3.7. - 10.7. |     355     | 341 - 4 Done
+10.7. - 17.7. |    134      | Done, without first 3 and last 1
+17.7. - 24.7. |    41      |
+24.7. - 31.7.|     90      |
+31.7. - 7.8. |     26      |
+7.8. - 14.8. |     73       | Done/61
+14.8. - 21.8. |    231      |
+21.8. - 28.8. |    899      |
+28.8. - 4.9. |     199      |
+4.9. - 8.9. |      782      |
 

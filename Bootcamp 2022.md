@@ -4,6 +4,14 @@
 
 ---
 
+## Tags:
+#bootcamp 
+
+## Links:
+- [[Kairos]]
+---
+
+## Kandidati
 - [[Toni]]
 - [[Maja]]
 - [[Loredana]]
