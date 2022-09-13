@@ -147,13 +147,6 @@
 	- [x] Revert changes regarding high load payloads for crons
 		- This includes the unit tests
 
-## Post Relies Improvements
-- [ ] Make the crons log the current index of the entire instead of the number of the lest in queue
-	- [ ] Implement InfoCodes upgrade
-	- [ ] Make it so that on the entire number the cron name is visible in the logger context
-	- [x] Debounce was not working since it needed to be called
-		- Caused infinite loop of retries
-
 ## [Executions](https://globalization-partners.atlassian.net/wiki/spaces/GPB/pages/2779644220/Report+as+a+Service+-+update+Billed+to+Paid+status)
 ### lspBillUpdateStatus
 **Date Range** | **# Entries** | **Status**
@@ -165,7 +158,7 @@
 31.7. - 7.8. |      263     |
 7.8. - 14.8. |      117      |
 14.8. - 21.8. |     200     | Done, without the last
-21.8. - 28.8. |     533     |
+21.8. - 28.8. |     533     | Done, till -97
 28.8. - 4.9. |      584     |
 4.9. - 8.9. |       28     |
 
@@ -177,11 +170,11 @@
 10.7. - 17.7. |    106      | Done, without the last
 17.7. - 24.7. |    1317      | without the last 86
 24.7. - 31.7.|      9605     | Done
-31.7. - 7.8. |      2520     | Skiped
+31.7. - 7.8. |      2520     | Skipped
 7.8. - 14.8. |      2247      | Done
-14.8. - 21.8. |     3140     | 
+14.8. - 21.8. |     3140     | Done, till -2052
 21.8. - 28.8. |     3975     |
-28.8. - 4.9. |      4685     |
+28.8. - 4.9. |      4685     | Done/4640, till -3940
 4.9. - 8.9. |      1257      |
 
 ### clientBillUnpaidStatus
@@ -194,7 +187,31 @@
 31.7. - 7.8. |     26      |
 7.8. - 14.8. |     73       | Done/61
 14.8. - 21.8. |    231      |
-21.8. - 28.8. |    899      |
-28.8. - 4.9. |     199      |
+21.8. - 28.8. |    899      | Done/814, till -430
+28.8. - 4.9. |     199      | Done/161, till -220
 4.9. - 8.9. |      782      |
 
+## Unknown
+- [42](https://one.newrelic.com/logger?account=1747307&duration=259200000&state=acfc0c9e-048e-6ba2-2515-3a1c6d5ec4df)
+	- na lsp cron job
+	- unknown date span
+	- till -68
+
+## Post Relies Improvements
+- [ ] Make the crons log the current index of the entire instead of the number of the lest in queue
+	- [ ] Implement InfoCodes upgrade
+	- [ ] Make it so that on the entire number the cron name is visible in the logger context
+- [x] Debounce was not working since it needed to be called
+	- Caused infinite loop of retries
+- [x] Make queue resilient to blocking by single message
+	- Group messages
+		- Only grouped messages are blocked
+- [ ] Fix long receive message times
+- [ ] Add metadata to entries
+	- [ ] Add date spans
+	- [ ] Add total number of entries for that date span
+
+## Robustness Criteria
+- [ ] Handle the long execution that goes into the next execution run
+	- Make it so that the cron counter is not set to new number, but rather the new number is added to the current cron counter number
+		- If there are no errors all the messages will eventually be processed
