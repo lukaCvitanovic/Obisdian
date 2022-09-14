@@ -33,3 +33,37 @@
 - [x] Add Workshop learning
 - [x] Add Ostava page
 - [ ] Refactor [[Tortelini]] page to have timeline chart
+## Apartment
+![[20220909_075631.jpg]]
+- [x] Buy TV stand
+- [x] HDMI
+- [ ] Clock
+- [ ] Clean up the balcony
+	- [x] Take things into the shed
+- [ ] [[Clean Out The Shed]]
+- [ ] Reorganize the hallway wardrobe
+- [x] Buy table legs
+	- [x] Build the [[Table]]
+- [x] Reorganize bathroom closets
+- [ ] Buy garbage bin and sorting bin
+- [ ] Wash the windows
+- [ ] Buy guides for curtains
+	- [ ] Set the [[Curtain Guides]]
+- [ ] Organize the papers and throw the rest
+- [ ] Set the pictures
+- [ ] Make over the room for Lovre
+- [ ] Glue the cetifix in the [[Ostava]]
+- [ ] Order glass for the table
+- [x] Change the water mesuring clock
+- [ ] Kutne lajsne
+- [ ] Foot rest for Lovre
+- [ ] Hooks for towels
+- [ ] WC corner element
+- [ ] Glass around the bath tub
+- [ ] Tomato wall
+- [ ] Develop the images
+- [ ] Paint the balcony
+	- [ ] Silicone it
+- [ ] Wash the floor under the chairs
+	- [ ] Set the new chair leg buffers
+- [ ] Shelf in [[Ostava]]
