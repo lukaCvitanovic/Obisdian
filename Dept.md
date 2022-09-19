@@ -12,3 +12,6 @@ Organization that has multiple projects
 
 ## Bootcamp Projects
 - [[Kairos]]
+
+## Dept fests
+[[Deptfest 2022]]
