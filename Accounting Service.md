@@ -13,9 +13,12 @@
 	- With the planed switch from [[Acumatica]] to [[Workday]] there will be less responsibility to perform the rate limiting
 	- Switch will be caried out in [[Workday intergration]]
 	- [[Accounting Service Post Release]]
+	- [[Contractor]]
 
 ## Random Notes
 - When returning dates to classic alway return in eastern date fromat
 
 ## To be pushed
 - info-error-codes branch
+
+## [ROTA](https://globalization-partners.atlassian.net/wiki/spaces/GPB/pages/2758803457/Rota+On-Call+support)

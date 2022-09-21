@@ -155,7 +155,7 @@
 10.7. - 17.7. |     74     | Done
 17.7. - 24.7. |     336     | 337/ Done, without last 4
 24.7. - 31.7.|      505     | Done
-31.7. - 7.8. |      263     |
+31.7. - 7.8. |      263     | 261/ Done
 7.8. - 14.8. |      117      |
 14.8. - 21.8. |     200     | Done, without the last
 21.8. - 28.8. |     533     | Done, till -97
@@ -197,23 +197,45 @@
 	- unknown date span
 	- till -68
 
+## Missing
+- First run
+	- Missing
+		- 00262316
+		- 00268322  
+		- 00254571  
+		- 00263152
+- Second run
+	- Processed
+		- 00263152
+			- Was [processed 2 times](https://one.newrelic.com/logger?account=1747307&begin=1662023777172&end=1663578980554&state=dd3f9738-8d73-1b20-9600-953ed9e605dd)
+				- on the 13th and 17th of Sept
+		- 00254571
+			- [Processed only last time](https://one.newrelic.com/logger?account=1747307&begin=1662023777172&end=1663578980554&state=6c9a60a1-b752-afd0-64ea-4c7846c01b36)
+	- Missing
+		- 00262316  
+		- 00268322
+			- [Processed as well](https://one.newrelic.com/logger?account=1747307&begin=1662023777172&end=1663578980554&state=60c1b56e-b7af-cb86-1d0d-e1cc9df5b45a) on the 18th Sept
+
 ## Post Relies Improvements
-- [ ] Make the crons log the current index of the entire instead of the number of the lest in queue
-	- [ ] Implement InfoCodes upgrade
-	- [ ] Make it so that on the entire number the cron name is visible in the logger context
+- [x] Make the crons log the current index of the entire instead of the number of the lest in queue
+	- [x] Implement InfoCodes upgrade
+	- [x] Make it so that on the entire number the cron name is visible in the logger context
 - [x] Debounce was not working since it needed to be called
 	- Caused infinite loop of retries
 - [x] Make queue resilient to blocking by single message
 	- Group messages
 		- Only grouped messages are blocked
 - [ ] Fix long receive message times
-- [ ] Add metadata to entries
-	- [ ] Add date spans
-	- [ ] Add total number of entries for that date span
-- [ ] Make the service log the invoice number
-	- 
+- [x] Add metadata to entries
+	- [x] Add date spans
+	- [x] Add total number of entries for that date span
+- [x] Make the service log the invoice number
+- [x] Make it so that it is indicated what number is added to the cron counter
+- [ ] Add logging so we can better understand why [[SQS]] doesn't pick up some of the messages
+- [ ] Modify V2 so it pulls messages from [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]] and reprocesses them
+- [ ] Add logging of messages pushed into [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
 
 ## Robustness Criteria
-- [ ] Handle the long execution that goes into the next execution run
+- [x] Handle the long execution that goes into the next execution run
 	- Make it so that the cron counter is not set to new number, but rather the new number is added to the current cron counter number
 		- If there are no errors all the messages will eventually be processed as long as we ask for message
