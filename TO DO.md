@@ -2,12 +2,13 @@
 
 # To Do
 
-- [ ] Checkout the diet plan
+- [ ] Checkout the [[Diet]] plan
 	- [ ] Make 5 variations for each meal
 - [ ] Research if its possible to install win10 without deleting the hard whole hard drive
 - [ ] Research how to use new wheel in games
 - [ ] Research how to get Irena a gift
 - [ ] Figure out what to get for Christmas to others
+- [ ] Figure out the [[Gym]]
 
 ## Job
 - [x] Add files to Bamboo
