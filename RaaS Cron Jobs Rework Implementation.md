@@ -7,7 +7,7 @@
 
 ## Links:
 - [[RaaS Cron Jobs Rework Learned]]
-
+- [Updating Bills to Paid Status in Platform](https://globalization-partners.atlassian.net/wiki/spaces/GPB/pages/2825453796/Updating+Bills+to+Paid+Status+in+Platform)
 ---
 
 ## Troubleshooting SQS
@@ -231,9 +231,77 @@
 	- [x] Add total number of entries for that date span
 - [x] Make the service log the invoice number
 - [x] Make it so that it is indicated what number is added to the cron counter
-- [ ] Add logging so we can better understand why [[SQS]] doesn't pick up some of the messages
-- [ ] Modify V2 so it pulls messages from [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]] and reprocesses them
-- [ ] Add logging of messages pushed into [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
+- [x] Add the ability to actively use DLQ
+	- Preparation
+		- [x] See if it is possible to locally simulate the use of [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
+			- **Yes**, by adding additional command to queue [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|setup]] shell file
+		- [x] See if it is possible to read messages from [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
+			- **Yes**
+		- [ ] Is it possible to make a Lambda function that would trigger reading of [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]] messages
+		- [x] Check if [[SQS]] returns info about deduplication through deduplicationId
+			- **Not possible**
+	- Goals:
+		- [x] Add logging so we can better understand why [[SQS]] doesn't pick up some of the messages
+		- [ ] Modify V2 so it pulls messages from [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]] and reprocesses them
+			- Not needed since `maxReceive` is set to 5
+				- Doesn't make sense since queue has attribute that allows messages to be received up to 5 times before being moved into [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
+		- [x] Add logging of messages pushed into [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
+			- Implementations Options:
+				1) Add a cron to check the [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]] every minute
+					- Would result in large amount of calls
+				2) Set up a Lambda function on the queue that would call the method to pool messages from [[SQS#DLQ https docs aws amazon com AWSSimpleQueueService latest SQSDeveloperGuide sqs-dead-letter-queues html|DLQ]]
+					- Question if this service is payed for and available for use?
+- [ ] Add tracking of duplicated messages
+	- **Not doable**
+	- [[AWS]] doesn't provide any signal or event that would tell us that duplication occurred
+	- The only other ways of implementation are:
+		- A DB table that would store some identifier (conted digest) that would be checked
+			- Would result in a lot of calls to and from DB
+			- Would bring throughput down
+		- A hash map that does the same think only it's not scalable
+- [x] Check for skip feature flag before running the cron
+	- Requires FEATURE_FLAG_ALWAYS_ENABLED to be `false`
+	- [ ] Automate this latter
+- [x] Add logging of message on delete and send message catch
+- [x] Add error throwing in delete message
+- [ ] Fix delete message method
+- [ ] Fix receive message method
+- [ ] Fix send message method
+- [x] Fix `LEFT OF CURRENT`
+- [x] Add delete message for DLQ messages
+- [ ] Add a route for the upcoming RaaS to retrieve invoices based on invoice IDs
+	- This will be only for `clientBillPaidStatus`
+	- Will it be able to update multiple invoices in one go
+	- RaaS can only receive one `invoiceId`
+	- [x] Add payload validation
+		- [ ] Make custom error messages
+	- [ ] Add response validation
+	- [ ] Create a service method to handle the requests
+		- Should be similar to `queueClientBillPaidStatus`
+		- [x] Add short circuting if invoices are empy
+		- [x] Remove skip cron condition
+			- Not needed since it won't be cron job
+		- [x] Remove `calculateDates`
+		- [ ] Call workdayApiReportService
+			- [ ] Create new a URL in `WorkdayReportUrl` for new Raas
+		- [ ] Remove cron counter
+		- [ ] Create a mapper for new RaaS
+		- [ ] Schedule the callback to [[Classic]]
+		- [ ] Remove date iteration
+		- [ ] Remove `readQueue`
+	- [ ] Create unit tests
+- [ ] ---
+- [ ] Run cron locally with `--prof` to gather analitics form node
+- [ ] Add Joi validation to cron job controller
+- [ ] Add response validation to cron job crontroller
+- [ ] Add the use of batchSend and batchReceive
+
+## Runs
+- [[24.9. Run]]
+- [[28.9 Run Analitics]]
+- [[4.10 Run Analitics]]
+- [[5-6. 10 Manual Run]]
+- [[7-8-9. 10 Manula Run]]
 
 ## Robustness Criteria
 - [x] Handle the long execution that goes into the next execution run

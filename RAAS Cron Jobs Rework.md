@@ -8,7 +8,7 @@
 ## Links:
 - [NG-21424](https://globalization-partners.atlassian.net/browse/NG-21424)
 - [[RaaS Cron Jobs Rework Implementation]]
-
+- [[RaaS Cron Jobs Long Term Solution]]
 ---
 
 ## Description
@@ -51,8 +51,3 @@
 		- Possible way of getting this metric is with `process.memoryUsage`
 	- Baseline results to beat
 		- ![[Screenshot 2022-08-17 at 16.35.17.png]]
-
----
-
-## Learned[[Programing#Learned|**]]
-- 

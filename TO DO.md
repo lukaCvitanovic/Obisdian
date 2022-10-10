@@ -2,12 +2,25 @@
 
 # To Do
 
+- [ ] Checkout the diet plan
+	- [ ] Make 5 variations for each meal
+- [ ] Research if its possible to install win10 without deleting the hard whole hard drive
+- [ ] Research how to use new wheel in games
+- [ ] Research how to get Irena a gift
+- [ ] Figure out what to get for Christmas to others
+
+## Job
+- [x] Add files to Bamboo
+- [ ] Create a new report for single invoice based on the ID
+- [ ] Implement SNS with SQS for duplicated invoices
+- [ ] Redesign the Info and Error codes
+
 ## [[Programing]]
 - [ ] In [[Space Agency]] add scrolling animations
 - [ ] Make a spike page around personal portfolio page
 - [ ] Make a spike for [[Babysitter Page]]
 - [ ] Fill in [[AWS]] page
-- [ ] Find Jest GUI plugin for VS code
+- [x] Find Jest GUI plugin for VS code
 - ### To Learn
 	- [x] [[Zero Down Time Architecture]]
 	- [ ] Go through all of the [[Design Pattern]]
@@ -37,11 +50,12 @@
 ![[20220909_075631.jpg]]
 - [x] Buy TV stand
 - [x] HDMI
-- [ ] Clock
-- [ ] Clean up the balcony
+- [x] Clock
+	- [ ] Set it up
+- [x] Clean up the balcony
 	- [x] Take things into the shed
 - [ ] [[Clean Out The Shed]]
-- [ ] Reorganize the hallway wardrobe
+- [x] Reorganize the hallway wardrobe
 - [x] Buy table legs
 	- [x] Build the [[Table]]
 - [x] Reorganize bathroom closets
@@ -49,16 +63,16 @@
 - [ ] Wash the windows
 - [ ] Buy guides for curtains
 	- [ ] Set the [[Curtain Guides]]
-- [ ] Organize the papers and throw the rest
+- [x] Organize the papers and throw the rest
 - [ ] Set the pictures
 - [ ] Make over the room for Lovre
 - [ ] Glue the cetifix in the [[Ostava]]
 - [ ] Order glass for the table
 - [x] Change the water mesuring clock
 - [ ] Kutne lajsne
-- [ ] Foot rest for Lovre
-- [ ] Hooks for towels
-- [ ] WC corner element
+- [x] Foot rest for Lovre
+- [x] Hooks for towels
+- [x] WC corner element
 - [ ] Glass around the bath tub
 - [ ] Tomato wall
 - [ ] Develop the images
@@ -66,4 +80,4 @@
 	- [ ] Silicone it
 - [ ] Wash the floor under the chairs
 	- [ ] Set the new chair leg buffers
-- [ ] Shelf in [[Ostava]]
+- [x] Shelf in [[Ostava]]

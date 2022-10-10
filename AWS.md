@@ -14,3 +14,5 @@ Platform for hosting web servers that comes with supporting architectural elemen
 
 ## Services
 - [[SQS]]
+- [[SNS]]
+- [[Lambda]]
