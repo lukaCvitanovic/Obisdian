@@ -48,11 +48,16 @@
 - [x] Add Ostava page
 - [ ] Refactor [[Tortelini]] page to have timeline chart
 ## Apartment
+- [[Priority Apartment ToDo]]
 ![[20220909_075631.jpg]]
 - [x] Buy TV stand
 - [x] HDMI
+<<<<<<< Updated upstream
 - [x] Clock
 	- [ ] Set it up
+=======
+- [ ] Clock
+>>>>>>> Stashed changes
 - [x] Clean up the balcony
 	- [x] Take things into the shed
 - [ ] [[Clean Out The Shed]]
