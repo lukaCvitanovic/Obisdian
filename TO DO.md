@@ -4,11 +4,12 @@
 
 - [ ] Checkout the [[Diet]] plan
 	- [ ] Make 5 variations for each meal
-- [ ] Research if its possible to install win10 without deleting the hard whole hard drive
-- [ ] Research how to use new wheel in games
+- [ ] Research if its possible to install [[win10 No Refactor|win10]] without deleting the hard whole hard drive
+- [ ] Research how to use new [[Setup Logitech G29|wheel]] in games
 - [ ] Research how to get Irena a gift
 - [ ] Figure out what to get for Christmas to others
 - [ ] Figure out the [[Gym]]
+- [ ] Pick a [[Restorant]] for birthday
 
 ## Job
 - [x] Add files to Bamboo
@@ -52,12 +53,9 @@
 ![[20220909_075631.jpg]]
 - [x] Buy TV stand
 - [x] HDMI
-<<<<<<< Updated upstream
 - [x] Clock
 	- [ ] Set it up
-=======
 - [ ] Clock
->>>>>>> Stashed changes
 - [x] Clean up the balcony
 	- [x] Take things into the shed
 - [ ] [[Clean Out The Shed]]
