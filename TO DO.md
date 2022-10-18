@@ -9,6 +9,8 @@
 - [ ] Research how to get Irena a gift
 - [ ] Figure out what to get for Christmas to others
 - [ ] Figure out the [[Gym]]
+- [ ] Figure out if it is possible to have both monitors connected to the laptop
+	- [ ] Is it possible to have a switch that
 
 ## Job
 - [x] Add files to Bamboo

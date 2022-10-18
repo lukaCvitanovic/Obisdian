@@ -3,7 +3,7 @@
 # RAAS Cron Jobs Rework
 
 ## Tags:
-#job, #raas, #cron
+#job, #raas, #crons
 
 ## Links:
 - [NG-21424](https://globalization-partners.atlassian.net/browse/NG-21424)

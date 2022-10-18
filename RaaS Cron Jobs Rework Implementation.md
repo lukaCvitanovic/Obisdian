@@ -3,11 +3,12 @@
 # RaaS Cron Jobs Rework Implementation
 
 ## Tags:
-#job, #rework
+#job, #rework #crons 
 
 ## Links:
 - [[RaaS Cron Jobs Rework Learned]]
 - [Updating Bills to Paid Status in Platform](https://globalization-partners.atlassian.net/wiki/spaces/GPB/pages/2825453796/Updating+Bills+to+Paid+Status+in+Platform)
+- [[Select Raas Learned]]
 ---
 
 ## Troubleshooting SQS
@@ -269,31 +270,37 @@
 - [ ] Fix send message method
 - [x] Fix `LEFT OF CURRENT`
 - [x] Add delete message for DLQ messages
-- [ ] Add a route for the upcoming RaaS to retrieve invoices based on invoice IDs
+- [x] Add a route for the upcoming RaaS to retrieve invoices based on invoice IDs
 	- This will be only for `clientBillPaidStatus`
 	- Will it be able to update multiple invoices in one go
 	- RaaS can only receive one `invoiceId`
 	- [x] Add payload validation
 		- [ ] Make custom error messages
-	- [ ] Add response validation
-	- [ ] Create a service method to handle the requests
+	- [x] Create a service method to handle the requests
 		- Should be similar to `queueClientBillPaidStatus`
-		- [x] Add short circuting if invoices are empy
+		- [x] Add short circuiting if invoices are empty
 		- [x] Remove skip cron condition
 			- Not needed since it won't be cron job
 		- [x] Remove `calculateDates`
-		- [ ] Call workdayApiReportService
-			- [ ] Create new a URL in `WorkdayReportUrl` for new Raas
-		- [ ] Remove cron counter
-		- [ ] Create a mapper for new RaaS
-		- [ ] Schedule the callback to [[Classic]]
-		- [ ] Remove date iteration
-		- [ ] Remove `readQueue`
-	- [ ] Create unit tests
+		- [x] For each invoice create a workday payload
+			- [x] Based on `ADDJUSTMENT` being present in the payload choose the correct serializer
+			- [x] For payloads with adjustment use `WorkdayGetCustomerInvoiceAdjustments`
+			- [x] Otherwise use `WorkdayGetCustomerInvoice`
+		- [x] send payloads to [[Workday]] through bottleneck
+		- [x] Perform mapping to Gpp schema of workday responses
+			- [x] Create response types for both entitieses
+			- For adjusted invoices **gappless invoice number** has to be returned
+				- Differentiate by the first tag nested in `env:Body` tag
+			- [ ] For payload with adjustment use `GetCustomerInvoiceAddjustmentMapper`
+			- [ ] Otherwise use `GetCustomerInvoiceMapper`
+		- [x] Remove cron counter
+		- [x] Create a mapper for new RaaS
+		- [x] Schedule the callback to [[Classic]]
+		- [x] Remove date iteration
+		- [x] Remove `readQueue`
+	- [x] Create unit tests
 - [ ] ---
-- [ ] Run cron locally with `--prof` to gather analitics form node
-- [ ] Add Joi validation to cron job controller
-- [ ] Add response validation to cron job crontroller
+- [x] Add Joi validation to cron job controller
 - [ ] Add the use of batchSend and batchReceive
 
 ## Runs

@@ -4,6 +4,7 @@
 
 ## Activities
 - [[Programing]]
+- [[Gaming]]
 - [[Training]]
 - [[Workshop]]
 - [[Cooking]]

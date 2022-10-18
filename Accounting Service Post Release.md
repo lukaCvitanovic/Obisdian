@@ -9,3 +9,4 @@
 - [[RAAS Cron Jobs Rework]]
 - [[Info And Error Codes Rework]]
 - [[Duplicate Invoices Fix]]
+- [[Add Provinces Into Clasic]]
