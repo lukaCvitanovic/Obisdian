@@ -3,7 +3,7 @@
 # Programing
 
 ## Tags:
-#acivity
+#activity
 
 ## Links:
 - [[Programing Learned]]

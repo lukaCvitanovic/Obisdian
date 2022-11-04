@@ -3,7 +3,7 @@
 # Gym
 
 ## Tags:
-#training , #gym
+#training , #gym #activity 
 
 ## Links:
 - [[Options 2022.10]]

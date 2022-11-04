@@ -1,4 +1,4 @@
-# Creational Patterns
+[[Design Pattern]]
 
 ## Tags:
 #programing-concept 
@@ -8,4 +8,5 @@ Creational [[Design Pattern]] provide various object creation mechanisms, which 
 
 ## Patterns:
 - [[Factory Method]]
-- 
+- [[Abstract Factory]]
+- [[Builder]]

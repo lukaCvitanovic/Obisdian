@@ -1,5 +1,8 @@
 [[Invoice Listing Report]]
 
-# Invoice Listing Report Bugs
+## Tags:
+#job #bugs 
+
+---
 
 - [ ] [[Positive Values on Credit Memos]]

@@ -3,7 +3,7 @@
 # Training
 
 ## Tags:
-#training,
+#training #activity 
 
 ## Links:
 

@@ -5,12 +5,22 @@
 
 ## Links:
 - [NG-28095](https://globalization-partners.atlassian.net/browse/NG-28095)
+- [PR](https://github.com/globalization-partners/gp-go-global/pull/8663)
+- [[Add Provinces Into Classic Learned]]
 
 ## Status
 ```mermaid
 graph TD
 	A[Started - 14.10.2022] --> B[No Action on ??? Provinces]
-	B --> C[Found all province codes]
+	B --> C[Found all province codes - 17.10.2022]
+	C --> D[Provinces validated with Workday province codes - 19.10.2022]
+	D --> E[SQL migration files generated - 20.10.2022]
+	E --> F[Removed migration for countries that already have province codes - 21.10.2022]
+	F --> G[Removed the duplicated provinces - 21.10.2022]
+	G --> H[Added SQLs into db.changelog file - 21.10.2022]
+	H --> I[Tested migrations locally - 21.10.2022]
+	I --> J[Finalized the provinces migration PR - 21.10.2022]
+	J --> K[Migration fix PR successfully deployed to work-uat - 21.10.2022]
 ```
 
 ---
@@ -26,12 +36,30 @@ graph TD
 		- [x] Find the correct names for the these provinces
 			- Added `name` property for real province name
 			- Added code for provinces that are not available with [iso-3166-2](https://www.npmjs.com/package/iso-3166-2) package
-- [ ] Extract province codes from Workday
-- [ ] Compare Workday province codes with generated ones
-- [ ] Test SLQ structure for one province
-- [ ] Create a SQL that will be run by migration and will add missing [[Workday]] provinces
-	- Would need country code that missing provinces belong to
-	- Province code and name of the missing provinces
+- [x] Extract province codes from Workday
+- [x] Compare Workday province codes with generated ones
+- [x] Test SLQ structure for one province
+- [x] Create a SQL that will be run by migration and will add missing [[Workday]] provinces
+	- [X] Would need country code that missing provinces belong to
+	- [X] Province code and name of the missing provinces
+	- [X] Create migration file for each country
+- [x] Remove migration files for countries that already have proince codes
+	- Bahamas
+	- Chile  
+	- Cote d’Ivoire  
+	- Egypt  
+	- France  
+	- Iceland  
+	- Nicaragua  
+	- Nigeria  
+	- Peru  
+	- South Africa  
+	- Tanzania  
+	- Ukraine  
+	- United States  
+	- Vietnam  
+	- Zimbabwe
+- [X] Moved migration files into release 55 folder
 
 ## Territories
 - These territories are associated with existing countries
@@ -77,3 +105,16 @@ graph TD
 	- Agin-Buryat Autonomous Okrug (obsolete) for Russian Federation
 	- Chita Oblast (obsolete) for Russian Federation
 	- Ust'-Ordynskiy Buryatskiy (obsolete) for Russian Federation
+- Can not match with Workday codes
+	- IRQ-KI (Workday doesn't have this code)
+	- SUR-SA (Workday doesn't have this code)
+
+## Migration Issues
+- Migration GitHub action failed
+	- Caused by faulty migrations being included in `db.changelog`
+	- PR approval GitHub action prevents any changes to added migrations files
+		- So you can only add new files and replace files in the `db.changelog`
+	- Failure was also caused by province names having `'` character
+		- Escaping them proved to be tricky
+		- Issue solved by using double quotation marks instead
+- Recommended [[Classic#Migrations#Locally Run Migrations|testing migrations locally]] first before creating a PR

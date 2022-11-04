@@ -1,4 +1,4 @@
-# Behaviour Patterns
+[[Design Pattern]]
 
 ## Tags:
 #programing-concept 

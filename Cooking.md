@@ -3,7 +3,7 @@
 # Cooking
 
 ## Tags:
-#cooking
+#cooking #activity 
 
 ## Links:
 

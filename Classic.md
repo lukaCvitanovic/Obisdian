@@ -22,3 +22,28 @@ Since all other services are there to support this application, the goal is to m
 			- eg. `amplify.publish(AppEvents.CLIENT_PERSON.SET_TO_MAIN_ACUMATICA_CONTACT, new UiActionEvent(this, ${m.id}));` in the web app
 			-  ![[Screenshot 2022-04-15 at 16.53.46.png]]
 		- Events are picked up by Java app and mapped to appropriate services
+
+## Migrations
+- Migrations are SQL scripts
+- They can have execution preconditions
+	- Preconditions are SQL that if true runs the migrations otherwise it skips it
+	- Preconditions syntax:
+		- `--precondition-sql-check expectedResult:<something> <SQL>`
+	- There is a migrations command that defines how the migrations is treated if it's not executed
+		- `--preconditions onFail:MARK_RAN`
+- For migration files to be executed they need to be referenced in corresponding `db.changelog` which itself is referenced in`db.changelog-master`
+- Migration files must not be modified or removed in any way
+	- **How to make changes to a migration file**
+		1) Create a new migration file
+		2) Remove original migration reference from `db.changelog` 
+		3) Add a reference to a new migration file in `db.changelog`
+### Locally Run Migrations
+	1) Start the local [[Classic]] instance
+	2) Have the `mysql-db` Docker container running
+	3) Sync [[Classic]] Java dependencies
+	4) Run `mvn liquibase:update -Dliquibase.url="jdbc:mysql://localhost:3306/goglobal?useSSL=false&serverTimezone=America/New_York" -Dliquibase.promptOnNonLocalDatabase=false`
+		- If the DB is in container
+	- If the command is waiting endlessly for DATABASECHANGELOGLOC then:
+		1) Delete all migrations from DATABASECHANGELOG table
+		2) Delete corresponding locking in DATABASECHANGELOGLOC table
+		

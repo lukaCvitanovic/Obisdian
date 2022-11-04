@@ -1,6 +1,7 @@
-# Me
-
 [[TO DO]]
+
+## Tags:
+#base
 
 ## Activities
 - [[Programing]]

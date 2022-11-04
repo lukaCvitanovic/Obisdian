@@ -3,7 +3,7 @@
 # Workshop
 
 ## Tags:
-#workshop
+#workshop #activity 
 
 ## Links:
 - [[Workshop Learned]]

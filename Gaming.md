@@ -1,10 +1,12 @@
 [[Me]]
 
 ## Tags:
-#gaming #acivity 
+#gaming #activity 
 
 ## Links:
 
 ---
 
+## Games
 - [[Cities Skylines]]
+- [[Asseto Corsa]]

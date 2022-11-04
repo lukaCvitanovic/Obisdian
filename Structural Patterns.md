@@ -1,4 +1,4 @@
-# Structural Patterns
+[[Design Pattern]]
 
 ## Tags:
 #programing-concept 

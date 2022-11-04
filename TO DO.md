@@ -1,21 +1,26 @@
 [[Me]]
 
-# To Do
+## Tags:
+#base
+
+## Links:
+
+---
 
 - [ ] Checkout the [[Diet]] plan
 	- [ ] Make 5 variations for each meal
 - [ ] Research if its possible to install [[win10 No Refactor|win10]] without deleting the hard whole hard drive
-- [ ] Research how to use new [[Setup Logitech G29|wheel]] in games
+- [x] Research how to use new [[Setup Logitech G29|wheel]] in games
 - [ ] Research how to get Irena a gift
 - [ ] Figure out what to get for Christmas to others
 - [ ] Figure out the [[Gym]]
 - [ ] Figure out if it is possible to have both monitors connected to the laptop
 	- [ ] Is it possible to have a switch that
-- [ ] Pick a [[Restorant]] for birthday
+- [x] Pick a [[Restorant]] for birthday
 
 ## Job
 - [x] Add files to Bamboo
-- [ ] Create a new report for single invoice based on the ID
+- [x] Create a new report for single invoice based on the ID
 - [ ] Implement SNS with SQS for duplicated invoices
 - [ ] Redesign the Info and Error codes
 
@@ -28,6 +33,8 @@
 - ### To Learn
 	- [x] [[Zero Down Time Architecture]]
 	- [ ] Go through all of the [[Design Pattern]]
+	- [ ] Find advances design patterns or high level ones
+	- [ ] Learn coding principles
 	- [ ] Kubernetes
 	- [ ] Terraform
 	- [ ] NFT and Web 3.0
@@ -57,7 +64,6 @@
 - [x] HDMI
 - [x] Clock
 	- [ ] Set it up
-- [ ] Clock
 - [x] Clean up the balcony
 	- [x] Take things into the shed
 - [ ] [[Clean Out The Shed]]
@@ -66,7 +72,7 @@
 	- [x] Build the [[Table]]
 - [x] Reorganize bathroom closets
 - [ ] Buy garbage bin and sorting bin
-- [ ] Wash the windows
+- [x] Wash the windows
 - [ ] Buy guides for curtains
 	- [ ] Set the [[Curtain Guides]]
 - [x] Organize the papers and throw the rest

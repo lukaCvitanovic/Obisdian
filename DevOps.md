@@ -1,6 +1,7 @@
 [[Programing]]
 
-# DevOps
+## Tags:
+#sphere_of_programming #activity 
 
 ## Links:
 - [[AWS]]

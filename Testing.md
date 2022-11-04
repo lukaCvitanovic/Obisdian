@@ -3,7 +3,7 @@
 # Testing MOC
 
 ## Tags:
-#sphere_of_programming
+#sphere_of_programming #activity 
 
 ## Links:
 - [[Jest]]
