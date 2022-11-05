@@ -15,7 +15,8 @@ graph TD
 
 ## Tips:
 - Overlay images on the map to create better terrain and Roads
-	- For HD satellite images use Google earth PRO
+	- For HD satelite images use Google earth PRO
+		- [Good alternative](http://www.chengfolio.com/google_map_customizer)
 	- [Image Overlay Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=814102166)
 
 ## Developments References
