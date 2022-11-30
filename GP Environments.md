@@ -1,12 +1,12 @@
 [[GP]]
 
-# GP Environments
-
 ## Tags:
 #envs, #job 
 
 ## Links:
 - [[How To Access Deployed Envs]]
+- [[How To Change Pipeline Deployment Source Branch]]
+- [[Setup PBAC Auth]]
 
 ---
 

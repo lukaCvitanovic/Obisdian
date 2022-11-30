@@ -5,15 +5,18 @@
 
 ## Links:
 - [NG-25506](https://globalization-partners.atlassian.net/browse/NG-25506)
-- []
 
 ## Steps
 ```mermaid
 graph TD
-1[Started the ticket - 2.11.2022] --> 2[Reproducing the error locally - 2.11.2022]
-2 --> 3[Investigating the payload sent to Workday to find reference to LSP - 2.11.2022]
-3 --> 4[Getting the supplier via Postman from Workday - 2.11.2022]
-4 --> 5[Modifing the Classic payload - 4.11.2022]
+	1[Started the ticket - 2.11.2022] --> 2[Reproducing the error locally - 2.11.2022]
+	2 --> 3[Investigating the payload sent to Workday to find reference to LSP - 2.11.2022]
+	3 --> 4[Getting the supplier via Postman from Workday - 2.11.2022]
+	4 --> 5[Modifing the Classic payload - 4.11.2022]
+	5 --> 6[Investigate if the API request to Accounting service is made on save - 4.11.2022]
+	6 --> 7[Adding missing API request - 7.11.2022]
+	7 --> 8[Fixing unit tests - 8.11.2022]
+	8 --> 9[Create a PR - 8.11.2022]
 ```
 ---
 
@@ -50,6 +53,17 @@ graph TD
 	- [ ] Modify the payload to contain the `isGpEntity` flag
 		- Since the GPP treats `Contractor` as `Professional` that field is send on the Contractor  creation
 	- **The class that handles contractor creation is the same as for the Professionals**
-- [ ] Is there an API call being sent when the contractor is created
+- [x] Is there an API call being sent when the contractor is created
 	- **API call to update Contractor is not being made**
 	- Since the Contractor is using `ContractorService` for updating the Contractor where the `AccountingService` class is not being called to update the contractor
+- [x] Add API call to [[Accounting Service]] on Contractor edit
+	- API call is failing
+		- Contractor client's MSA silo id is `null`
+		- When the contractor is created, the Client has all of it's data
+		- When the contractor is updated, provided Professional is missing data
+			- Professional with missing data is being sent to endpoint `/gp/clients/component/contractor/save`
+			- Request is sent from inside the GPP
+				- However the `Professional` object is not used, only the `professionalId` from that object (which is correct)
+				- The constructed model turns out wrong
+					- Although the `Professional` object returned from the DB is whole
+			- Added `professional.setClient(model.getClient());` before `copyProperties(professional, model);` fixes the issue
