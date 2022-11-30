@@ -10,3 +10,4 @@ Creational [[Design Pattern]] provide various object creation mechanisms, which 
 - [[Factory Method]]
 - [[Abstract Factory]]
 - [[Builder]]
+- [[Prototype]]

@@ -6,12 +6,26 @@
 ## Links:
 
 ---
+## Current Week
+- [x] Kupi Ireni poklon
+- [x] Pitaj oca dali moze napraviti biciklu Lovri
+- [x] Pogleadaj gume
+	- prednje su 2020, zadnje su 2017
+	- [ ] Nabavi nove gume
+- [ ] Promini kocnice
+	- Pogledaj sa Elvisom dali se to moze napraviti kod Pere
+	- Pero me triba zvat u Ponediljak da se dogovorimo za termin
+- [x] Postavi Lucinu sliku cipke
+- [ ] Postavi ogledalo
+	- [x] Pogledaj dali imas tiple za Siporex i vide koje odgovaraju
+- [ ] Pogledaj za kupiti RAM na internetu
+---
 
 - [ ] Checkout the [[Diet]] plan
 	- [ ] Make 5 variations for each meal
 - [ ] Research if its possible to install [[win10 No Refactor|win10]] without deleting the hard whole hard drive
 - [x] Research how to use new [[Setup Logitech G29|wheel]] in games
-- [ ] Research how to get Irena a gift
+- [x] Research how to get Irena a gift
 - [ ] Figure out what to get for Christmas to others
 - [ ] Figure out the [[Gym]]
 - [ ] Figure out if it is possible to have both monitors connected to the laptop
