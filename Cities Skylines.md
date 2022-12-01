@@ -8,7 +8,7 @@
 ---
 
 ## Projects
-- [[Improved Split]]
+- [[Project Split]]
 
 ## Mods
 - [[Modify vehicle spawn point]]
